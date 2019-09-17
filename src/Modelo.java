@@ -1,3 +1,3 @@
 public class Modelo extends Marca {
-    String nome, tipo;
+    String modelo, tipo;
 }

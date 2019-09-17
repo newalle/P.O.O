@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1739ee68-1d78-49dc-9748-cc1af8ddba58" name="Default Changelist" comment="" />
+    <list default="true" id="1739ee68-1d78-49dc-9748-cc1af8ddba58" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Automovel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Automovel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Marca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Marca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modelo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Principal.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +20,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1PhwpQIfUNdUIibnOkSWlAdspAj" />
   <component name="PropertiesComponent">
@@ -71,10 +80,26 @@
       <workItem from="1566945659100" duration="8962000" />
       <workItem from="1567101254793" duration="485000" />
       <workItem from="1567423929417" duration="2373000" />
+      <workItem from="1567556145722" duration="1191000" />
+      <workItem from="1568741535602" duration="53000" />
+      <workItem from="1568742028255" duration="4812000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
