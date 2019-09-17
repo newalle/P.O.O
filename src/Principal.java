@@ -9,6 +9,7 @@ public class Principal {
     private List<Funcionario> listaFuncionario = new ArrayList<>();
     private List<Cliente> listaCliente = new ArrayList<>();
     private List<Automovel> listaAutomovel = new ArrayList<>();
+    private List<Venda> listaVenda = new ArrayList<>();
 
     public static void main(String[] args) {
         System.out.println("Garagem do Jukinha");
@@ -40,6 +41,7 @@ public class Principal {
                 menuAutomovel();
                 break;
             case 4:
+                menuVendas();
                 break;
             case 0:
             default:
@@ -469,7 +471,7 @@ public class Principal {
 
     //  Automovel
     private void menuAutomovel() {
-        System.out.println("Menu Cliente");
+        System.out.println("Menu Automóvel");
         System.out.println("1 - Listar");
         System.out.println("2 - Cadastrar");
         System.out.println("3 - Alterar");
@@ -501,7 +503,7 @@ public class Principal {
                 menuPrincipal();
                 break;
         }
-        menuCliente();
+        menuAutomovel();
     }
 
     private void cadastrarAutomovel() {
@@ -684,4 +686,147 @@ public class Principal {
 
     }
 // Fim automovel
+
+    private void menuVendas() {
+        System.out.println("Menu de Vendas");
+        System.out.println("1 - Realizar venda");
+        System.out.println("2 - Cancelar venda");
+        System.out.println("0 - Voltar");
+
+        Scanner sc = new Scanner(System.in);
+        int op = sc.nextInt();
+
+        switch (op) {
+            case 1:
+                realizarVenda();
+                break;
+            case 2:
+
+                break;
+            case 0:
+            default:
+                menuPrincipal();
+                break;
+        }
+        menuVendas();
+
+    }
+
+    private void realizarVenda() {
+        Venda v = new Venda();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Selecionar Funcionario");
+        System.out.println();
+
+        for (Funcionario f : listaFuncionario
+        ) {
+            System.out.println(f.cod);
+        }
+
+        System.out.println("Selecione o usuario: ");
+        String opt = sc.nextLine();
+        sc.close();
+
+        for (Funcionario f : listaFuncionario
+        ) {
+            if (f.cod.equals(opt)) {
+                v.setFuncionario(f);
+            } else {
+                System.out.println("Funcionario não encontrado, tente novamente");
+            }
+        }
+
+        System.out.println("Selecionar Cliente");
+        System.out.println();
+
+        for (Cliente c : listaCliente
+        ) {
+            System.out.println(c.cod);
+        }
+
+        System.out.println("Selecione o cliente: ");
+        opt = sc.nextLine();
+        sc.close();
+
+        for (Cliente c : listaCliente
+        ) {
+            if (c.cod.equals(opt)) {
+                v.setCliente(c);
+            } else {
+                System.out.println("Cliente não encontrado, tente novamente");
+            }
+        }
+
+        System.out.println("Selecionar Automovel");
+        System.out.println();
+
+        for (Automovel a : listaAutomovel
+        ) {
+            System.out.println(a.getPlaca());
+        }
+
+        System.out.println("Selecione o Automovel: ");
+        opt = sc.nextLine();
+        sc.close();
+
+        for (Automovel a : listaAutomovel
+        ) {
+            if (a.getPlaca().equals(opt)) {
+                v.setAutomovel(a);
+            } else {
+                System.out.println("Automóvel não encontrado, tente novamente");
+            }
+        }
+
+        System.out.println("Informações da venda");
+        System.out.println();
+
+        System.out.println("Código: ");
+        v.setCod(sc.nextLine());
+
+        System.out.println("Data da venda: ");
+        v.setDt_venda(sc.nextLine());
+
+        System.out.println("Valor da Venda: ");
+        v.setValor_venda(sc.nextDouble());
+
+        System.out.println("Comissão: ");
+        v.setComissao_venda(sc.nextDouble());
+
+        listaVenda.add(v);
+
+    }
+
+    private void cancelarVenda() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Cancelar Venda");
+        System.out.println();
+
+        for (Venda v : listaVenda
+        ) {
+            System.out.println(v.getCod());
+        }
+
+        System.out.println("Selecione o código da venda: ");
+        String opt = sc.nextLine();
+        sc.close();
+
+        Venda aux = new Venda();
+
+        for (Venda v : listaVenda
+        ) {
+            if (v.getCod().equals(opt)) {
+                aux = v;
+                System.out.println("Venda cancelada com sucesso!");
+                break;
+            } else {
+                System.out.println("Automóvel não encontrado");
+            }
+        }
+
+        listaVenda.remove(aux);
+
+    }
 }
