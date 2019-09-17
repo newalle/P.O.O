@@ -8,6 +8,7 @@ public class Principal {
 
     private List<Funcionario> listaFuncionario = new ArrayList<>();
     private List<Cliente> listaCliente = new ArrayList<>();
+    private List<Automovel> listaAutomovel = new ArrayList<>();
 
     public static void main(String[] args) {
         System.out.println("Garagem do Jukinha");
@@ -481,7 +482,7 @@ public class Principal {
 
         switch (op) {
             case 1:
-                listarAutomovoel();
+                listarAutomovel();
                 break;
             case 2:
                 cadastrarAutomovel();
@@ -531,19 +532,24 @@ public class Principal {
         a.setKm(sc.nextFloat());
 
         System.out.println("Ano de Fabricação: ");
-        a.setKm(sc.nextFloat());
+        a.setAno_fab(sc.nextLine());
 
         System.out.println("Ano do Modelo: ");
-        a.setKm(sc.nextFloat());
+        a.setAno_modelo(sc.nextLine());
+
+        System.out.println("Preço: ");
+        a.setValor(sc.nextFloat());
+
+        listaAutomovel.add(a);
     }
 
-    private void listarAutomovoel() {
-        System.out.println("#Lista de Funcionarios");
+    private void listarAutomovel() {
+        System.out.println("#Lista de Automóveis");
         System.out.println();
 
-        for (Cliente c : listaCliente) {
+        for (Automovel a : listaAutomovel) {
 
-            System.out.println(c.cod + " | " + c.nome + " | " + c.cpf + " | " + c.telefone);
+            System.out.println(a.getPlaca() + " | " + a.tipo + " | " + a.modelo + " | " + a.marca);
 
         }
     }
@@ -551,52 +557,59 @@ public class Principal {
     private void alterarAutomovel() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Alterar Cliente");
+        System.out.println("Alterar Automóvel");
         System.out.println();
 
-        for (Cliente c : listaCliente
+        for (Automovel a : listaAutomovel
         ) {
-            System.out.println(c.nome);
+            System.out.println("Placa: " + a.getPlaca());
         }
 
-        System.out.println("Selecione o cliente: ");
+        System.out.println("Selecione o automovel: ");
         String opt = sc.nextLine();
         sc.close();
 
-        for (Cliente c : listaCliente
+        for (Automovel a : listaAutomovel
         ) {
-            if (c.nome.equals(opt)) {
-                Cliente novoCliente = new Cliente();
+            if (a.getPlaca().equals(opt)) {
+                Automovel novoAutomovel = new Automovel();
 
-                System.out.println("Informe o código: ");
-                novoCliente.cod = sc.nextLine();
+                System.out.println("Marca: ");
+                a.marca = sc.nextLine();
 
-                System.out.println("Informe o nome: ");
-                novoCliente.nome = sc.nextLine();
+                System.out.println("Modelo: ");
+                a.modelo = sc.nextLine();
 
-                System.out.println("Informe o CPF: ");
-                novoCliente.cpf = sc.nextLine();
+                System.out.println("Tipo: ");
+                a.tipo = sc.nextLine();
 
-                System.out.println("Informe o endereço: ");
-                novoCliente.endereco = sc.nextLine();
+                System.out.println("Placa: ");
+                a.setPlaca(sc.nextLine());
 
-                System.out.println("Informe o telefone: ");
-                novoCliente.telefone = sc.nextLine();
+                System.out.println("Chassi: ");
+                a.setChassi(sc.nextLine());
 
-                try {
-                    System.out.println("Informe a data de nascimento: ");
-                    String data = sc.nextLine();
-                    novoCliente.dt_nascimento = new SimpleDateFormat("dd/MM/yyyy").parse(data);
-                } catch (ParseException e) {
-                    System.out.println(e.getMessage());
-                }
+                System.out.println("Cor: ");
+                a.setCor(sc.nextLine());
 
-                int index = listaCliente.indexOf(c);
-                listaCliente.set(index, novoCliente);
+                System.out.println("Quilometragem: ");
+                a.setKm(sc.nextFloat());
 
-                System.out.println("Cliente alterado com sucesso!");
+                System.out.println("Ano de Fabricação: ");
+                a.setAno_fab(sc.nextLine());
+
+                System.out.println("Ano do Modelo: ");
+                a.setAno_modelo(sc.nextLine());
+
+                System.out.println("Preço: ");
+                a.setValor(sc.nextFloat());
+
+                int index = listaAutomovel.indexOf(a);
+                listaAutomovel.set(index, novoAutomovel);
+
+                System.out.println("Automóvel alterado com sucesso!");
             } else {
-                System.out.println("Cliente não encontrado");
+                System.out.println("Automóvel não encontrado");
             }
         }
 
@@ -605,30 +618,34 @@ public class Principal {
     private void buscarAutomovel() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Buscar Cliente");
+        System.out.println("Buscar Automóvel");
         System.out.println();
 
-        for (Cliente c : listaCliente
+        for (Automovel a : listaAutomovel
         ) {
-            System.out.println(c.nome);
+            System.out.println(a.getPlaca());
         }
 
-        System.out.println("Selecione o usuario: ");
+        System.out.println("Selecione o automóvel: ");
         String opt = sc.nextLine();
-        for (Cliente c : listaCliente
+        for (Automovel a : listaAutomovel
         ) {
-            if (c.nome.equals(opt)) {
-                System.out.println("Usuário encontrado:");
-                System.out.println("Código: " + c.cod);
-                System.out.println("Nome: " + c.nome);
-                System.out.println("CPF: " + c.cpf);
-                System.out.println("Data de Nascimento: " + c.dt_nascimento);
-                System.out.println("Telefone: " + c.telefone);
-                System.out.println("Endereço: " + c.endereco);
+            if (a.getPlaca().equals(opt)) {
+                System.out.println("Automóvel encontrado:");
+                System.out.println("Placa: " + a.getPlaca());
+                System.out.println("Marca: " + a.marca);
+                System.out.println("Modelo: " + a.modelo);
+                System.out.println("Tipo: " + a.tipo);
+                System.out.println("Ano de fabricação: " + a.getAno_fab());
+                System.out.println("Ano do modelo: " + a.getAno_modelo());
+                System.out.println("Cor: " + a.getCor());
+                System.out.println("Chassi: " + a.getChassi());
+                System.out.println("Quilometragem: " + a.getKm());
+                System.out.println("Preço: " + a.getValor());
                 break;
 
             } else {
-                System.out.println("Usuário não encontrado");
+                System.out.println("Automóvel não encontrado");
             }
 
         }
@@ -638,32 +655,32 @@ public class Principal {
     private void excluirAutomovel() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Deletar Cliente");
+        System.out.println("Deletar Automóvel");
         System.out.println();
 
-        for (Cliente c : listaCliente
+        for (Automovel a : listaAutomovel
         ) {
-            System.out.println(c.nome);
+            System.out.println(a.getPlaca());
         }
 
-        System.out.println("Selecione o cliente: ");
+        System.out.println("Selecione a placa: ");
         String opt = sc.nextLine();
         sc.close();
 
-        Cliente aux = new Cliente();
+        Automovel aux = new Automovel();
 
-        for (Cliente c : listaCliente
+        for (Automovel a : listaAutomovel
         ) {
-            if (c.nome.equals(opt)) {
-                aux = c;
-                System.out.println("Usuario excluído com sucesso!");
+            if (a.getPlaca().equals(opt)) {
+                aux = a;
+                System.out.println("Automóvel excluído com sucesso!");
                 break;
             } else {
-                System.out.println("Usuário não encontrado");
+                System.out.println("Automóvel não encontrado");
             }
         }
 
-        listaCliente.remove(aux);
+        listaAutomovel.remove(aux);
 
     }
 // Fim automovel
