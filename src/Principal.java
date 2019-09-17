@@ -701,7 +701,7 @@ public class Principal {
                 realizarVenda();
                 break;
             case 2:
-
+                cancelarVenda();
                 break;
             case 0:
             default:
