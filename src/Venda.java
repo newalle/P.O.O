@@ -6,7 +6,7 @@ public class Venda {
 
     private Date dt_venda;
     private String cod;
-    private double comissao_venda, valor_venda;
+    private float comissao_venda, valor_venda;
 
     private Automovel automovel;
     private Funcionario funcionario;
@@ -32,19 +32,19 @@ public class Venda {
         this.cod = cod;
     }
 
-    public double getComissao_venda() {
+    public float getComissao_venda() {
         return comissao_venda;
     }
 
-    public void setComissao_venda(double comissao_venda) {
+    public void setComissao_venda(float comissao_venda) {
         this.comissao_venda = comissao_venda;
     }
 
-    public double getValor_venda() {
+    public float getValor_venda() {
         return valor_venda;
     }
 
-    public void setValor_venda(double valor_venda) {
+    public void setValor_venda(float valor_venda) {
         this.valor_venda = valor_venda;
     }
 

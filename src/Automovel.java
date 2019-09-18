@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Automovel extends Modelo {
     private String cor, chassi, placa;
-    private double km, valor;
+    private float km, valor;
     private Date ano_fab, ano_modelo;
 
     public String getCor() {
@@ -31,7 +31,7 @@ public class Automovel extends Modelo {
         this.placa = placa;
     }
 
-    public double getKm() {
+    public float getKm() {
         return km;
     }
 
@@ -39,7 +39,7 @@ public class Automovel extends Modelo {
         this.km = km;
     }
 
-    public double getValor() {
+    public float getValor() {
         return valor;
     }
 

@@ -789,10 +789,10 @@ public class Principal {
         v.setDt_venda(sc.nextLine());
 
         System.out.println("Valor da Venda: ");
-        v.setValor_venda(sc.nextDouble());
+        v.setValor_venda(sc.nextFloat());
 
         System.out.println("Comissão: ");
-        v.setComissao_venda(sc.nextDouble());
+        v.setComissao_venda(sc.nextFloat());
 
         listaVenda.add(v);
 
